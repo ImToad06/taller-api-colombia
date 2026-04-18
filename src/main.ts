@@ -3,6 +3,10 @@ import './style.css';
 declare const Plotly: any;
 
 interface Attraction {
+  id: number;
+  name: string;
+  description: string;
+  images: string[];
   city: {
     name: string;
   } | null;
@@ -70,6 +74,23 @@ async function init() {
     
     loadingEl.style.display = 'none';
     Plotly.newPlot(chartEl, [trace], layout, { responsive: true });
+    
+    // Top 6 atracciones
+    const topAttractions = data.slice(0, 6);
+    const attractionsListEl = document.getElementById('attractions-list');
+    
+    if (attractionsListEl) {
+      attractionsListEl.innerHTML = topAttractions.map(attr => `
+        <div class="attraction-card">
+          ${attr.images && attr.images.length > 0 ? `<img src="${attr.images[0]}" alt="${attr.name}" class="attraction-image" loading="lazy">` : `<div class="attraction-image" style="background:#eee; display:flex; align-items:center; justify-content:center; color:#999;">Sin imagen</div>`}
+          <div class="attraction-info">
+            <h3>${attr.name}</h3>
+            <span class="city">📍 ${attr.city?.name || 'Ubicación desconocida'}</span>
+            <p title="${attr.description.replace(/"/g, '&quot;')}">${attr.description}</p>
+          </div>
+        </div>
+      `).join('');
+    }
     
   } catch (error) {
     loadingEl.textContent = 'Hubo un error al cargar los datos. Por favor, intenta de nuevo.';

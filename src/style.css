@@ -51,6 +51,70 @@ main {
   height: 600px;
 }
 
+#top-attractions {
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#top-attractions h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+#attractions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.attraction-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+}
+
+.attraction-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.attraction-info {
+  padding: 1.5rem;
+}
+
+.attraction-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.attraction-info .city {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.attraction-info p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 footer {
   margin-top: auto;
   padding: 1rem;
