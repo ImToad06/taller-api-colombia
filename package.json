@@ -1,8 +1,18 @@
 {
   "name": "taller-api-colombia",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": "ImToad06",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImToad06/taller-api-colombia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ImToad06/taller-api-colombia/issues"
+  },
+  "homepage": "https://github.com/ImToad06/taller-api-colombia#readme",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

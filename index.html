@@ -1,13 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>taller-api-colombia</title>
+    <title>Atracciones Turísticas de Colombia</title>
+    <!-- Plotly CDN para renderizar el gráfico -->
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1>Atracciones Turísticas por Ciudad</h1>
+    </header>
+    <main>
+      <div id="loading">Cargando datos...</div>
+      <div id="chart-container"></div>
+    </main>
+    <footer>
+      <p>Hecho por el estudiante Juan Camilo reyes</p>
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
